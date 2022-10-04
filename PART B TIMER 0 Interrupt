@@ -1,0 +1,43 @@
+#include <xc.h>
+#define _XTAL_FREQ 64000000L
+#define LED1 LATCbits.LATC0
+#define LED2 LATCbits.LATB7
+static void interrupt ISR(void);
+void delay (unsigned int x);
+
+void main (void)
+{
+TRISAbits.TRISA4= ;
+TRISBbits.TRISC0= ;
+TRISCbits.TRISB7= ;
+TRISD=  ;
+ANSELA= ;
+TMROL= ;
+INTCONbits.GIE= ;
+INTCONbits.INT0IE= ;
+INTCONbits.INT0IF= ;
+INTCON2bits.INTEDG0= ;
+
+while(1)
+{
+LED1=~LED1;
+delay(100);
+PORTD= ;
+}
+}
+
+static void interrupt ISR (void)
+{
+if(INTCONbits.INT0IF)
+{
+LED2=~LED2;
+TMR0L= ;
+INTCONbits.INT0IF=0;
+}
+}
+
+void delay (unsigned int x)
+{
+for(;x>0;x--)
+__delay_ms(1);
+}
