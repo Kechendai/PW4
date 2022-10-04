@@ -11,8 +11,8 @@ TRISBbits.TRISB0=1;
 TRISBbits.TRISB6=0;
 TRISBbits.TRISB7=0;
 INTCONbits.INT0IE=1;
-INTCONTbits.INT0IF=0;
-INTCON2its.INTEDG0=0;
+INTCONbits.INT0IF=0;
+INTCON2bits.INTEDG0=0;
 
 while(1)
 {
@@ -24,6 +24,7 @@ delay(100);
 static void interrupt ISR (void)
 {
 if(INTCONbits.INT0IF)
+{
 LED2=1;
 delay(500);
 LED2=0;
