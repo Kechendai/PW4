@@ -17,6 +17,8 @@ INTCONbits.RBIF= ;
 INTCON2bits.INTEDG0= ;
 INTCON2bits.RBIP= ;
 INTCON2bits.RBPU= ;
+ANSELB= ;
+ANSELD= ;
 
 while (1)
 {
